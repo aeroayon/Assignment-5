@@ -1,0 +1,73 @@
+* { box-sizing: border-box; margin:0; padding:0; font-family: Arial, sans-serif; }
+body { background-color: #f0f0f0; }
+
+/* Navbar */
+nav { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1);flex-wrap: wrap;}
+nav .left { display:flex; align-items:center; gap:10px; }
+nav .right { display:flex; align-items:center; gap:20px; }
+nav span { font-weight:bold; }
+
+/* Hero Section */
+.hero { text-align:center; padding:50px 20px; background: linear-gradient(90deg, #fbc2eb, #a18cd1, #fbc2eb); }
+.hero img { width:96px; margin-bottom:20px; }
+.hero h2 { font-size:2.5rem; margin-bottom:10px; }
+.hero h4 { font-size:1rem; color:#555; }
+
+/* Main Section */
+.main { display:flex; flex-direction:column; gap:20px; padding:30px; }
+
+/* Cards Grid */
+.cards { display:grid; grid-template-columns:1fr 1fr; gap:20px; }  /* 👈 mobile = 2 cards */
+@media(min-width:992px){ 
+  .cards { grid-template-columns:repeat(3,1fr); }  /* 👈 desktop = 3 cards (unchanged) */
+}
+
+/* Card */
+.card { 
+  background:#fff;  /* white background */
+  padding:15px; 
+  border-radius:15px; 
+  display:flex; 
+  align-items:center; 
+  position:relative; 
+  color:#000; /* text black */
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Heart top-right */
+.card .heart {
+  position:absolute; 
+  top:10px; 
+  right:10px; 
+  cursor:pointer; 
+  font-size:1.2rem; 
+  color:red; /* optional red heart */
+}
+
+/* Card image left mini */
+.card img { 
+  width:40px;   /* mini version */
+  height:40px; 
+  object-fit:contain; 
+  margin-right:15px; 
+  border-radius:6px;
+}
+
+/* Card info */
+.card-info { display:flex; flex-direction:column; }
+.card-info h3 { margin:0; font-size:1rem; }
+.card-info p { font-weight:bold; margin:5px 0 0 0; }
+
+/* Actions */
+.card .actions { margin-top:5px; display:flex; gap:10px; }
+.card button { padding:5px 10px; border:none; border-radius:8px; cursor:pointer; font-size:0.9rem; display:flex; align-items:center; gap:5px; }
+.copy-btn { background:#e5e7eb; color:#000; }
+.call-btn { background:#10b981; color:#fff; }
+
+/* Call History */
+.history { background:#fff; padding:20px; border-radius:15px; max-height:800px; overflow-y:auto; box-shadow:0 2px 8px rgba(0,0,0,0.1); margin-top:20px; }
+@media(min-width:992px){ .main { flex-direction:row; } .history { flex:1; margin-top:0; margin-left:20px; } .cards { flex:2; } }
+.history-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; }
+.history ul { list-style:none; color:#333; }
+.history li { margin-bottom:8px; padding:5px; border-bottom:1px solid #eee; font-size:0.95rem; }
+.history-time { font-size:0.8rem; color:#888; margin-left:5px; }
